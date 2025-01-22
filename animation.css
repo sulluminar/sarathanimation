@@ -1,0 +1,300 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    background-image: url(https://th.bing.com/th/id/OIP.G0bFQ6vq6cM8p9HpcPPVYgHaEK?rs=1&pid=ImgDetMain);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+
+}
+
+header {
+    position: relative;
+    padding: 0.2rem;
+}
+
+
+.navbar {
+    height: 60%;
+    width: 100%;
+    justify-content: center;
+
+}
+
+.navbar .logo {
+    color: #cec7e4;
+    font-size: 40px;
+    font-weight: bolder;
+    margin-right: 50%;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: center;
+    color: #fff;
+}
+.navbar ul li:hover{
+    transition: all 0.5s ease-in-out;
+    color: greenyellow;
+    cursor: pointer;
+
+
+}
+
+
+.leftside {
+    width: 270px;
+    background: var(--bg-black-100);
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    padding: 30px;
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+    margin-left: 100px;
+
+
+}
+
+.leftside ul {
+    list-style: none;
+    position: absolute;
+
+}
+
+.leftside span {
+    margin-left: 15px;
+}
+
+.leftside span:hover {
+    color: rgb(220, 173, 42);
+    animation: shadow alternate linear;
+    text-shadow: 0 0 20px #c3debb, 0 0 40px white;
+}
+
+
+.leftside li a {
+    color: rgb(231, 235, 233);
+    margin-left: 20px;
+    text-decoration: none;
+    padding: 50px;
+    font-size: 30px;
+    position: static;
+}
+
+section {
+    width: 500px;
+    height: 500px;
+    display: grid;
+
+}
+
+
+
+.imgdiv {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(10, 10, 10);
+    position: absolute;
+    margin-left: 500px;
+    border-radius: 50%;
+    transform-style: preserve-3d;
+    transition: 1s ease-in-out;
+     animation: rotateAnimation 2s infinite linear; /* Rotates the div continuously */
+
+}
+
+
+
+/* rotate */
+@keyframes rotateAnimation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  
+  
+
+.imgdiv img {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    justify-content: center;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+    animation: spin 2s linear infinite;
+
+
+}
+
+.imgdiv:hover {
+    animation: 3.2s animation infinite alternate;
+
+
+
+}
+
+@keyframes animation {
+    0% {
+        transform: translateX(60px) scale(0.9);
+
+
+    }
+
+    50% {
+        transform: translate(0px, 0px) scale(1.02);
+    }
+
+    100% {
+        transform: translateX(-60px) scale(0.9);
+    }
+}
+
+#button {
+    height: 50px;
+    width: 150px;
+    position: relative;
+    margin-left: 250%;
+    padding: 5px;
+    margin-top: 230px;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: bolder;
+    transition:transform 0.5s ease-in-out;
+    animation-name: transform;
+  animation-duration: 4s all;
+     
+}
+@keyframes transform {
+    from{background-color: rgb(233, 115, 31);}
+    to{background-color: yellow;}
+    
+  }
+
+#button:hover {
+    animation: shaking 0.5s linear infinite;
+
+
+}
+
+@keyframes shaking {
+    0% {
+        background-color: rgb(52, 94, 209);
+    }
+
+    25% {
+        border-width: 10px;
+    }
+
+    100% {
+        transform: translateX(1px) scale(0.9);
+    }
+}
+
+.open-menu,
+.close-menu {
+    display: none;
+
+    position: absolute;
+    cursor: pointer;
+    color: azure;
+    margin-top: -25px;
+
+}
+
+.open-menu {
+    top: 60%;
+    right: 20px;
+    transform: translate(-50%);
+}
+
+.close-menu {
+    top: 60%;
+    right: 25px;
+}
+
+#check {
+    display: none;
+}
+
+
+
+
+
+@media screen and (max-width: 700px) {
+
+    .navbar .logo {
+        color: #eeedf1;
+        font-size: 30px;
+        font-weight: bolder;
+        margin-right: 50%;
+    }
+
+    .imgdiv {
+
+        position: relative;
+        justify-content: center;
+        border-radius: 50%;
+        background-position: center;
+        background-size: cover;
+        margin-left: 100%;
+    }
+
+    #button {
+        position: relative;
+        margin-left: 110%;
+        margin-top: 50px;
+
+    }
+
+    .navbar ul{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        z-index: 100;
+        top: 0;
+        right: 0;
+        transition: all 0.2s ease-in-out;   
+
+
+    }
+    .navbar ul{margin-top: 40px;}
+    .navbar ul li{padding: 5px;}
+
+    .open-menu,
+    .close-menu {
+        display: block;
+
+        margin-top: -25px;
+
+    }
+  #check:checked ~ .navbar ul{
+    margin-top:40px ;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    transition: all 0.2s ease-in-out;
+    
+
+  }
+}
